@@ -1,0 +1,609 @@
+{
+  "cases": [
+    {
+      "k": 0,
+      "img": "case_normal.jpg",
+      "pat": [
+        "P-1001",
+        34,
+        "Female",
+        "S-2026-0412",
+        "2026-10-06"
+      ],
+      "MPV": 9.4,
+      "PDW": 12.1,
+      "LCR": 24,
+      "PCT": 0.24,
+      "prob": [
+        91,
+        3,
+        4,
+        2
+      ],
+      "contrib": {
+        "MPV": 24,
+        "PDW": 22,
+        "LCR": 20,
+        "PCT": 16,
+        "RDW": 8,
+        "HGB": 10
+      },
+      "n": 38,
+      "clumps": 0,
+      "dist": [
+        18,
+        66,
+        16
+      ],
+      "morph": {
+        "Area (µm²)": 5.1,
+        "Equiv. diameter (µm)": 2.5,
+        "Circularity": 0.86,
+        "Aspect ratio": 1.2,
+        "Eccentricity": 0.45,
+        "Perimeter (µm)": 8.63
+      },
+      "clin": [
+        "MPV, PDW and LCR are all inside the demo reference ranges",
+        "PCT is normal"
+      ],
+      "img_f": [
+        "Platelets of normal size and shape, evenly distributed",
+        "No platelet clumps represented in the demo"
+      ],
+      "image_origin": "supplied-reference",
+      "PLT": 255,
+      "description": "The demo combines platelet indices inside the sample ranges with a scenario of evenly distributed, typical-size platelets and no clumping.",
+      "dimensions": [
+        310,
+        225
+      ],
+      "regions": [
+        {
+          "id": "P1",
+          "type": "platelet",
+          "x": 145,
+          "y": 39,
+          "w": 17,
+          "h": 17,
+          "crop_file": "crop_0_p1.jpg"
+        },
+        {
+          "id": "P2",
+          "type": "platelet",
+          "x": 155,
+          "y": 116,
+          "w": 17,
+          "h": 17,
+          "crop_file": "crop_0_p2.jpg"
+        },
+        {
+          "id": "P3",
+          "type": "platelet",
+          "x": 262,
+          "y": 0,
+          "w": 15,
+          "h": 12,
+          "crop_file": "crop_0_p3.jpg"
+        },
+        {
+          "id": "P4",
+          "type": "platelet",
+          "x": 286,
+          "y": 133,
+          "w": 17,
+          "h": 17,
+          "crop_file": "crop_0_p4.jpg"
+        },
+        {
+          "id": "P5",
+          "type": "platelet",
+          "x": 7,
+          "y": 157,
+          "w": 17,
+          "h": 17,
+          "crop_file": "crop_0_p5.jpg"
+        }
+      ]
+    },
+    {
+      "k": 1,
+      "img": "case_hypoproductive.jpg",
+      "pat": [
+        "P-1002",
+        58,
+        "Male",
+        "S-2026-0413",
+        "2026-10-06"
+      ],
+      "MPV": 7.1,
+      "PDW": 10.2,
+      "LCR": 11,
+      "PCT": 0.07,
+      "prob": [
+        3,
+        88,
+        6,
+        3
+      ],
+      "contrib": {
+        "MPV": 34,
+        "LCR": 24,
+        "PDW": 18,
+        "PCT": 12,
+        "RDW": 7,
+        "HGB": 5
+      },
+      "n": 8,
+      "clumps": 0,
+      "dist": [
+        62,
+        34,
+        4
+      ],
+      "morph": {
+        "Area (µm²)": 3.2,
+        "Equiv. diameter (µm)": 2.0,
+        "Circularity": 0.9,
+        "Aspect ratio": 1.1,
+        "Eccentricity": 0.38,
+        "Perimeter (µm)": 6.68
+      },
+      "clin": [
+        "MPV is below range and LCR is low, so platelets are represented as small in this scenario",
+        "PCT is low, matching the reduced platelet mass"
+      ],
+      "img_f": [
+        "Mostly small, fairly uniform platelets",
+        "No platelet clumps represented in the demo"
+      ],
+      "image_origin": "synthetic-demo",
+      "PLT": 75,
+      "description": "The demo combines lower MPV and LCR with a scenario of small, relatively uniform platelets and reduced analyzer platelet count.",
+      "dimensions": [
+        1490,
+        1055
+      ],
+      "regions": [
+        {
+          "id": "P1",
+          "type": "platelet",
+          "x": 262,
+          "y": 92,
+          "w": 42,
+          "h": 40,
+          "crop_file": "crop_1_p1.jpg"
+        },
+        {
+          "id": "P2",
+          "type": "platelet",
+          "x": 1257,
+          "y": 207,
+          "w": 42,
+          "h": 40,
+          "crop_file": "crop_1_p2.jpg"
+        },
+        {
+          "id": "P3",
+          "type": "platelet",
+          "x": 458,
+          "y": 347,
+          "w": 41,
+          "h": 39,
+          "crop_file": "crop_1_p3.jpg"
+        },
+        {
+          "id": "P4",
+          "type": "platelet",
+          "x": 163,
+          "y": 760,
+          "w": 41,
+          "h": 40,
+          "crop_file": "crop_1_p4.jpg"
+        },
+        {
+          "id": "P5",
+          "type": "platelet",
+          "x": 918,
+          "y": 899,
+          "w": 44,
+          "h": 42,
+          "crop_file": "crop_1_p5.jpg"
+        }
+      ]
+    },
+    {
+      "k": 2,
+      "img": "case_hyperdestructive.jpg",
+      "pat": [
+        "P-1003",
+        42,
+        "Female",
+        "S-2026-0414",
+        "2026-10-06"
+      ],
+      "MPV": 12.9,
+      "PDW": 19.4,
+      "LCR": 49,
+      "PCT": 0.1,
+      "prob": [
+        2,
+        7,
+        89,
+        2
+      ],
+      "contrib": {
+        "MPV": 30,
+        "PDW": 28,
+        "LCR": 26,
+        "PCT": 7,
+        "RDW": 5,
+        "HGB": 4
+      },
+      "n": 9,
+      "clumps": 0,
+      "dist": [
+        8,
+        37,
+        55
+      ],
+      "morph": {
+        "Area (µm²)": 9.8,
+        "Equiv. diameter (µm)": 3.5,
+        "Circularity": 0.71,
+        "Aspect ratio": 1.7,
+        "Eccentricity": 0.78,
+        "Perimeter (µm)": 13.17
+      },
+      "clin": [
+        "MPV, PDW and LCR are all above range",
+        "High values point to large, variable-sized platelets"
+      ],
+      "img_f": [
+        "Large, irregular platelets of variable size",
+        "No platelet clumps represented in the demo"
+      ],
+      "image_origin": "supplied-reference",
+      "PLT": 65,
+      "description": "The demo combines higher MPV, PDW and LCR with a scenario of larger, variable-shaped platelets and reduced analyzer platelet count.",
+      "dimensions": [
+        298,
+        218
+      ],
+      "regions": [
+        {
+          "id": "P1",
+          "type": "platelet",
+          "x": 171,
+          "y": 132,
+          "w": 18,
+          "h": 17,
+          "crop_file": "crop_2_p1.jpg"
+        },
+        {
+          "id": "P2",
+          "type": "platelet",
+          "x": 200,
+          "y": 108,
+          "w": 18,
+          "h": 17,
+          "crop_file": "crop_2_p2.jpg"
+        },
+        {
+          "id": "P3",
+          "type": "platelet",
+          "x": 276,
+          "y": 69,
+          "w": 18,
+          "h": 16,
+          "crop_file": "crop_2_p3.jpg"
+        },
+        {
+          "id": "P4",
+          "type": "platelet",
+          "x": 11,
+          "y": 2,
+          "w": 17,
+          "h": 16,
+          "crop_file": "crop_2_p4.jpg"
+        }
+      ]
+    },
+    {
+      "k": 3,
+      "img": "case_pseudothrombocytopenia.jpg",
+      "pat": [
+        "P-1004",
+        29,
+        "Male",
+        "S-2026-0415",
+        "2026-10-06"
+      ],
+      "MPV": 9.9,
+      "PDW": 14.8,
+      "LCR": 31,
+      "PCT": 0.09,
+      "prob": [
+        6,
+        5,
+        9,
+        80
+      ],
+      "contrib": {
+        "PCT": 22,
+        "PDW": 18,
+        "LCR": 14,
+        "MPV": 12,
+        "RDW": 6,
+        "HGB": 4
+      },
+      "n": 12,
+      "clumps": 3,
+      "dist": [
+        20,
+        60,
+        20
+      ],
+      "morph": {
+        "Area (µm²)": 5.4,
+        "Equiv. diameter (µm)": 2.6,
+        "Circularity": 0.82,
+        "Aspect ratio": 1.3,
+        "Eccentricity": 0.5,
+        "Perimeter (µm)": 9.1
+      },
+      "clin": [
+        "Platelet indices are within or near range, so the low count is not explained by size",
+        "Analyzer PCT is low relative to what the smear shows"
+      ],
+      "img_f": [
+        "Platelet clumps represented in the demo, which can make analyzers undercount",
+        "Isolated platelets look normal in size"
+      ],
+      "image_origin": "supplied-reference",
+      "PLT": 80,
+      "description": "The demo combines a low reported analyzer count with an illustrative clumping pattern. The scenario represents a possible measurement artifact rather than a confirmed biological decrease.",
+      "dimensions": [
+        310,
+        225
+      ],
+      "regions": [
+        {
+          "id": "P1",
+          "type": "platelet",
+          "x": 130,
+          "y": 111,
+          "w": 13,
+          "h": 13,
+          "crop_file": "crop_3_p1.jpg"
+        },
+        {
+          "id": "P2",
+          "type": "platelet",
+          "x": 86,
+          "y": 22,
+          "w": 13,
+          "h": 13,
+          "crop_file": "crop_3_p2.jpg"
+        },
+        {
+          "id": "P3",
+          "type": "platelet",
+          "x": 286,
+          "y": 184,
+          "w": 14,
+          "h": 14,
+          "crop_file": "crop_3_p3.jpg"
+        },
+        {
+          "id": "C1",
+          "type": "clump",
+          "x": 98,
+          "y": 91,
+          "w": 27,
+          "h": 25,
+          "crop_file": "crop_3_c1.jpg"
+        },
+        {
+          "id": "C2",
+          "type": "clump",
+          "x": 71,
+          "y": 154,
+          "w": 54,
+          "h": 43,
+          "crop_file": "crop_3_c2.jpg"
+        },
+        {
+          "id": "C3",
+          "type": "clump",
+          "x": 203,
+          "y": 124,
+          "w": 85,
+          "h": 61,
+          "crop_file": "crop_3_c3.jpg"
+        }
+      ]
+    }
+  ],
+  "primary": {
+    "MPV": [
+      "Mean Platelet Volume",
+      "fL",
+      7.5,
+      11.5
+    ],
+    "PDW": [
+      "Platelet Distribution Width",
+      "fL",
+      9.0,
+      17.0
+    ],
+    "LCR": [
+      "Large Cell Ratio",
+      "%",
+      13.0,
+      43.0
+    ]
+  },
+  "support": [
+    [
+      "WBC",
+      "x10³/µL",
+      4,
+      10,
+      6.8
+    ],
+    [
+      "RBC",
+      "x10⁶/µL",
+      4.2,
+      5.9,
+      4.8
+    ],
+    [
+      "HGB",
+      "g/dL",
+      12,
+      17.5,
+      14.1
+    ],
+    [
+      "HCT",
+      "%",
+      36,
+      52,
+      42
+    ],
+    [
+      "MCV",
+      "fL",
+      80,
+      100,
+      88
+    ],
+    [
+      "MCH",
+      "pg",
+      27,
+      33,
+      29.4
+    ],
+    [
+      "MCHC",
+      "g/dL",
+      32,
+      36,
+      33.5
+    ],
+    [
+      "RDW",
+      "%",
+      11.5,
+      14.5,
+      13.2
+    ],
+    [
+      "PCT",
+      "%",
+      0.108,
+      0.282,
+      null
+    ],
+    [
+      "Lymphocyte %",
+      "%",
+      20,
+      45,
+      31
+    ],
+    [
+      "Monocyte %",
+      "%",
+      2,
+      10,
+      7
+    ],
+    [
+      "Neutrophil %",
+      "%",
+      40,
+      70,
+      56
+    ],
+    [
+      "Eosinophil %",
+      "%",
+      1,
+      6,
+      3
+    ],
+    [
+      "Basophil %",
+      "%",
+      0,
+      2,
+      0.7
+    ],
+    [
+      "Lymphocyte #",
+      "x10³/µL",
+      1,
+      4,
+      2.1
+    ],
+    [
+      "Monocyte #",
+      "x10³/µL",
+      0.2,
+      1,
+      0.5
+    ],
+    [
+      "Neutrophil #",
+      "x10³/µL",
+      2,
+      7,
+      3.8
+    ],
+    [
+      "Eosinophil #",
+      "x10³/µL",
+      0,
+      0.5,
+      0.2
+    ],
+    [
+      "Basophil #",
+      "x10³/µL",
+      0,
+      0.1,
+      0.05
+    ]
+  ],
+  "detection": [
+    {
+      "name": "Original reference field",
+      "file": "detect_original.jpg"
+    },
+    {
+      "name": "RBC / WBC detection reference",
+      "file": "detect_rbc_wbc.jpg"
+    },
+    {
+      "name": "Platelet detection reference",
+      "file": "detect_platelet.jpg"
+    }
+  ],
+  "classes": [
+    "Normal",
+    "Hypoproductive",
+    "Hyperdestructive",
+    "Pseudothrombocytopenia"
+  ],
+  "full_classes": [
+    "Normal",
+    "Hypoproductive Thrombocytopenia",
+    "Hyperdestructive Thrombocytopenia",
+    "Pseudothrombocytopenia"
+  ]
+}

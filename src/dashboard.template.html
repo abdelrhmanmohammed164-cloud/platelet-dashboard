@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101923">
+<title>Sruthi Kamath — Platelet Intelligence</title>
+<style>__STYLE__</style>
+</head>
+<body>
+<div class="app">
+ <header class="header">
+  <div class="brand"><svg viewBox="0 0 64 66" aria-hidden="true" fill="none"><circle cx="16" cy="17" r="12" stroke="currentColor" stroke-width="2.7"/><circle cx="39" cy="43" r="17" stroke="currentColor" stroke-width="2.7"/><circle cx="10" cy="48" r="4" fill="currentColor"/></svg><div><strong class="brand-name">Sruthi Kamath</strong><small>PLATELET INTELLIGENCE</small></div></div>
+  <div class="header-tools"><span class="badge">DEMO</span><label class="case-label"><span class="sr-only">Select demonstration sample</span><select id="case-select" class="case-select"><option value="0">Normal / Sample 01</option><option value="1">Hypoproductive / Sample 02</option><option value="2">Hyperdestructive / Sample 03</option><option value="3">Pseudo / Sample 04</option></select></label></div>
+ </header>
+ <div class="shell">
+  <aside class="sidebar"><nav class="nav" role="tablist" aria-label="Dashboard pages" aria-orientation="vertical">
+   <div class="nav-group">SAMPLE</div>
+   <button id="tab-overview" role="tab" aria-selected="true" aria-controls="view-overview" data-view="overview"><span>01</span>Overview</button>
+   <button id="tab-clinical" role="tab" aria-selected="false" aria-controls="view-clinical" data-view="clinical"><span>02</span>Platelet indices</button>
+   <button id="tab-cbc" role="tab" aria-selected="false" aria-controls="view-cbc" data-view="cbc"><span>03</span>CBC profile</button>
+   <div class="nav-group">IMAGE ANALYSIS</div>
+   <button id="tab-smear" role="tab" aria-selected="false" aria-controls="view-smear" data-view="smear"><span>04</span>Smear images</button>
+   <button id="tab-morph" role="tab" aria-selected="false" aria-controls="view-morph" data-view="morph"><span>05</span>Morphometry</button>
+   <div class="nav-group">MODEL</div>
+   <button id="tab-prediction" role="tab" aria-selected="false" aria-controls="view-prediction" data-view="prediction"><span>06</span>Prediction</button>
+   <button id="tab-model" role="tab" aria-selected="false" aria-controls="view-model" data-view="model"><span>07</span>Fusion model</button>
+   <button id="tab-explain" role="tab" aria-selected="false" aria-controls="view-explain" data-view="explain"><span>08</span>Explainability</button>
+  </nav><div class="sidebar-note">CBC + peripheral smear<br><b>Multimodal analysis</b></div></aside>
+  <div class="workspace">
+   <div class="context-row"><span id="case-meta"></span><details class="patient-details" id="patient-details"><summary>Patient details</summary><div class="patient" id="patient"></div></details></div>
+   <div class="heading"><div class="eyebrow" id="page-eyebrow">SAMPLE / OVERVIEW</div><h1 id="page-heading">The complete platelet picture.</h1><p id="page-subtitle">A focused view of the smear and the selected demo result.</p></div>
+   <div id="load-fallback" class="load-fallback">Loading the demonstration sample…<noscript>Enable JavaScript to explore the dashboard.</noscript></div>
+   <main>
+   <section class="page" id="view-overview" role="tabpanel" aria-labelledby="tab-overview">
+    <div class="overview-grid">
+     <article class="panel overview-smear"><div class="panel-head"><h2>Peripheral smear</h2><button class="link-button" id="review-morphology">Image workspace ↗</button></div><div class="image-stage" id="smear-frame" role="button" tabindex="0" aria-label="Enlarge smear or drop one JPG or PNG"><img id="smear-image" alt="Selected reference smear"><svg id="main-overlay" aria-hidden="true"></svg><span class="image-tag" id="image-tag"></span></div><div class="image-tools"><button class="text-button" id="original-button" aria-pressed="true">Original</button><button class="text-button" id="enhance-button" aria-pressed="false">Processed</button><button class="text-button" id="zoom-button">Enlarge</button><span class="quiet" id="source-label"></span></div></article>
+     <article class="panel quick-result"><div class="eyebrow">CLASSIFICATION / DEMO</div><div id="overview-result-body"><h2 id="overview-class"></h2><div class="quick-confidence"><span id="overview-confidence"></span><small>%</small></div><p class="quiet">Prediction confidence</p><div class="fusion-pill">CBC + image features</div><button class="button" data-go="prediction">Full prediction ↗</button></div><div id="overview-empty" hidden><h2>Uploaded image preview</h2><p class="quiet">A connected model is needed for prediction.</p><button class="button" data-go="smear">Review image ↗</button></div></article>
+    </div>
+    <div class="overview-indices" id="overview-indices"></div>
+   </section>
+   <section class="page" id="view-clinical" role="tabpanel" aria-labelledby="tab-clinical" hidden>
+    <article class="panel"><div class="panel-head"><h2>MPV · PDW · LCR profile</h2><span class="quiet">Primary clinical features</span></div><div class="indicator-grid" id="indices"></div><div class="chart-note">Each indicator uses its own scale. Shaded bands show the sample reference intervals.</div></article><div class="insight"><span class="eyebrow">CLINICAL PATTERN</span><p id="clinical-insight"></p><button class="link-button" data-go="cbc">Supporting CBC ↗</button></div>
+   </section>
+   <section class="page" id="view-cbc" role="tabpanel" aria-labelledby="tab-cbc" hidden>
+    <div class="cbc-grid"><article class="panel"><div class="panel-head"><h2>CBC parameter profile</h2><span class="quiet">9 supporting indices</span></div><div id="cbc-profile"></div><div class="profile-axis"><span>Lower limit</span><span>Upper limit</span></div><p class="chart-note">Position relative to each sample interval · individual units per row.</p></article><div id="cbc-snapshot" class="snapshot-stack"></div></div>
+    <details class="details-panel" id="supporting-cbc"><summary>Full CBC table <span>19 supporting parameters + PLT</span></summary><div class="table-wrap"><table class="cbc-table"><thead><tr><th>Parameter</th><th>Value</th><th>Unit</th><th>Sample interval</th><th>Status</th></tr></thead><tbody id="cbc-body"></tbody></table></div></details>
+   </section>
+   <section class="page" id="view-smear" role="tabpanel" aria-labelledby="tab-smear" hidden>
+    <div class="page-tools"><div class="upload-actions"><label class="button upload-button" for="smear-upload">↑ Upload smear</label><input class="sr-only" id="smear-upload" type="file" accept="image/jpeg,image/png" aria-label="Upload a JPG or PNG smear"><button class="text-button" id="reset-image" hidden>Reset image</button><span class="quiet">JPG / PNG · up to 10 MB</span></div><button class="text-button" id="toggle-regions" aria-pressed="true">Hide demo regions</button></div>
+    <div class="notice" id="morph-upload-note" hidden>Uploaded preview only. Detection and measurements require a model; the other pages retain the selected demo sample.</div>
+    <article class="panel image-panel"><div class="compare-grid"><div><div class="compare-label"><span>Original smear</span><small id="original-source"></small></div><div class="image-stage" id="original-frame" role="button" tabindex="0" aria-label="Enlarge original smear"><img id="original-image" alt="Original peripheral smear"></div></div><div><div class="compare-label"><span>Processed smear</span><small id="processed-label"></small></div><div class="image-stage" id="processed-frame" role="button" tabindex="0" aria-label="Enlarge processed smear"><img id="processed-image" alt="Processed peripheral smear"><svg id="processed-overlay" aria-hidden="true"></svg></div></div></div><div class="image-legend" id="image-legend"><span><i></i>Platelet region</span><span class="clump"><i></i>Clump region</span><small>Manual demo annotations</small></div><div class="stats" id="image-stats"></div></article>
+    <details class="details-panel quality-details"><summary>Image quality <span class="quality-status" id="quality-status">Checking…</span></summary><div class="detail-content"><div class="quality-list" id="quality-checks"></div><p class="quiet" id="upload-note">Basic resolution, focus and brightness checks · local contrast preprocessing.</p><p class="quiet" id="region-note"></p></div></details>
+    <div id="upload-error" class="upload-error" role="alert" hidden></div><div id="upload-feedback" class="upload-feedback" aria-live="polite" hidden></div><div class="image-footer"><button class="button" id="run-analysis">Run demo analysis</button><button class="link-button" data-go="morph">Morphometric features ↗</button></div>
+    <details class="details-panel reference-details"><summary>Detection reference gallery <span>Separate example field</span></summary><div class="detail-content"><p class="quiet">Independent supplied examples; unrelated to this sample or uploaded image.</p><div class="detection-grid" id="detection-grid"></div></div></details>
+   </section>
+   <section class="page" id="view-morph" role="tabpanel" aria-labelledby="tab-morph" hidden>
+    <div class="scope-note" id="morph-scope">Selected sample · illustrative measurements</div><article class="panel"><div class="metrics" id="morph-metrics"></div></article><div class="morph-grid"><article class="panel"><h2>Platelet size distribution</h2><div id="size-chart"></div></article><article class="panel"><h2>Morphology &amp; clumping</h2><ul class="findings" id="image-findings"></ul><button class="link-button" data-go="explain">Representative regions ↗</button></article></div><details class="details-panel"><summary>Compare all four scenarios <span>Six feature charts</span></summary><div class="detail-content"><div class="morph-charts" id="morph-charts"></div><p class="chart-note">Separate scales per feature · perimeter is derived from demo area and circularity.</p></div></details>
+   </section>
+   <section class="page" id="view-prediction" role="tabpanel" aria-labelledby="tab-prediction" hidden>
+    <article class="panel prediction"><div id="result-pending" class="pending-prediction" hidden><div class="eyebrow">UPLOADED PREVIEW</div><h2>No prediction available.</h2><p class="quiet">This uploaded image has not been analyzed by a trained model.</p><button class="button" id="show-scenario">View selected demo result</button></div><div id="result-content"><div class="notice" id="result-scope" hidden></div><div class="eyebrow">PREDICTED CLASS / SIMULATED</div><h2 class="result-name" id="result-name"></h2><div class="prediction-grid"><div class="score-block"><div class="score"><span id="confidence"></span><small>%</small></div><p class="quiet">Demo confidence</p><span class="fusion-pill">Multimodal fusion</span></div><div><div class="prob-title">Four-class probabilities · demo</div><div id="probabilities"></div></div></div><p class="result-summary" id="result-summary"></p><details class="evidence-details"><summary>Clinical &amp; image evidence</summary><div class="evidence-grid"><div><h3>Clinical indicators</h3><p id="result-clinical"></p></div><div><h3>Image findings / demo</h3><p id="result-image"></p></div></div></details></div></article>
+   </section>
+   <section class="page" id="view-model" role="tabpanel" aria-labelledby="tab-model" hidden>
+    <article class="panel architecture"><div class="fusion-grid"><div class="branch"><div class="branch-label">CLINICAL / CBC</div><h2>Clinical features</h2><div class="feature-chips" id="clinical-chips"></div><p class="quiet">+ Supporting CBC parameters</p><div class="extractor">Clinical feature extraction</div></div><div class="branch"><div class="branch-label">PERIPHERAL SMEAR</div><div class="fusion-image-row"><img id="fusion-image" alt="Selected smear, image branch preview"><div><h2>Image features</h2><p class="quiet">Detection · morphology · clumps</p><small id="model-input-source"></small></div></div><div class="extractor">Image feature extraction</div></div></div><svg class="fusion-connector" viewBox="0 0 1000 38" preserveAspectRatio="none" aria-hidden="true"><path d="M250 0 V14 H500 M750 0 V14 H500 V35 M495 29 L500 35 L505 29" fill="none" stroke="#79b6a5" stroke-width="1" vector-effect="non-scaling-stroke"/></svg><div class="fusion-layer"><span class="eyebrow">CLINICAL FEATURES + IMAGE FEATURES</span><h2>Multimodal Feature Fusion</h2></div><div class="output-label">Four-class classification</div><div class="class-grid" id="fusion-classes"><button type="button" class="class-card" data-case="0" aria-pressed="false" aria-label="Select Normal demonstration sample">Normal</button><button type="button" class="class-card" data-case="1" aria-pressed="false" aria-label="Select Hypoproductive demonstration sample">Hypoproductive</button><button type="button" class="class-card" data-case="2" aria-pressed="false" aria-label="Select Hyperdestructive demonstration sample">Hyperdestructive</button><button type="button" class="class-card" data-case="3" aria-pressed="false" aria-label="Select Pseudothrombocytopenia demonstration sample">Pseudothrombocytopenia</button></div><p class="chart-note" id="fusion-status">Intended architecture · demonstration scenario</p></article>
+   </section>
+   <section class="page" id="view-explain" role="tabpanel" aria-labelledby="tab-explain" hidden>
+    <div class="explain-grid"><article class="panel"><h2>Clinical contribution</h2><p class="quiet">Illustrative scores · not model-derived</p><div id="contributions"></div><details class="evidence-details"><summary>Clinical findings</summary><ul class="findings" id="clinical-findings"></ul></details><button class="link-button" id="model-cbc">Full CBC ↗</button></article><article class="panel"><h2>Important image regions</h2><p class="quiet" id="model-image-note"></p><div class="crop-grid" id="platelet-crops"></div><p class="quiet" id="crop-unavailable" hidden>No model-generated regions are available for this upload.</p><p class="quiet" id="crop-caption"></p><details class="evidence-details"><summary>Image findings</summary><ul class="findings" id="model-image-findings"></ul></details><button class="link-button" id="model-morphology">View marked smear ↗</button></article></div>
+   </section>
+   </main>
+   <footer class="footer"><div><button id="full-cbc">Full CBC</button><span>Presentation demo · illustrative data</span></div></footer>
+  </div>
+ </div><p class="sr-only" id="case-announcement" aria-live="polite"></p>
+</div>
+<dialog id="zoom-dialog" aria-labelledby="zoom-title"><div class="dialog-head"><div><h2 id="zoom-title">Peripheral blood smear</h2><p class="quiet" id="zoom-caption"></p></div><button class="close" data-close="zoom-dialog" aria-label="Close enlarged smear">×</button></div><div class="zoom-shell"><img class="zoom-image" id="zoom-image" alt="Enlarged peripheral smear"><svg id="zoom-overlay" aria-hidden="true"></svg></div></dialog>
+<script id="demo-data" type="application/json">__DEMO_DATA__</script>
+<script>__SCRIPT__</script>
+</body>
+</html>
